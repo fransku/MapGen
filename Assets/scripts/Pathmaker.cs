@@ -45,7 +45,7 @@ public class Pathmaker : MonoBehaviour {
 
         //find the number of tiles that have been isntantiated 
         int floorCount = GameObject.FindGameObjectsWithTag("Floor").Length; 
-        if (counter < 100 && floorCount < 500)
+        if (counter < 100 && floorCount < 600)
         {
             float i = Random.Range(0f, 1f);
             if(i < .28f)
