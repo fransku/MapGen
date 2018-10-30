@@ -145,7 +145,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -364.9, y: 224.7}
+  m_AnchoredPosition: {x: -377, y: 185}
   m_SizeDelta: {x: 205, y: 72.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &273509529
@@ -370,7 +370,7 @@ Light:
   serializedVersion: 8
   m_Type: 1
   m_Color: {r: 1, g: 0.9690702, b: 0.8254717, a: 1}
-  m_Intensity: 1
+  m_Intensity: 1.4
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -570,7 +570,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.759434, g: 0.9439778, b: 1, a: 0}
+  m_BackGroundColor: {r: 1, g: 0.7137255, b: 0.8117647, a: 1}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
@@ -583,7 +583,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 20.999119
+  field of view: 30.230633
   orthographic: 0
   orthographic size: 5
   m_Depth: -1

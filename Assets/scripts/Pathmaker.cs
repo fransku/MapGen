@@ -25,7 +25,7 @@ public class Pathmaker : MonoBehaviour {
     //	Declare a public Transform called pathmakerSpherePrefab, assign the prefab in inspector; 		
     // you'll have to make a "pathmakerSphere" prefab later
     public GameObject pathmakerSpherePrefab;
-    int floorCount; 
+  
     public Transform[] tilePrefabs;
 
     void Start()
@@ -41,19 +41,22 @@ public class Pathmaker : MonoBehaviour {
 
 
         }
-        counter++; 
-        if (counter < 100)
+        counter++;
+
+        //find the number of tiles that have been isntantiated 
+        int floorCount = GameObject.FindGameObjectsWithTag("Floor").Length; 
+        if (counter < 100 && floorCount < 500)
         {
             float i = Random.Range(0f, 1f);
-            if(i < .25f)
+            if(i < .28f)
             {
                 gameObject.transform.localEulerAngles += new Vector3(0, 90f, 0); 
             }
-            if (i > .25f && i < .5f)
+            if (i > .28f && i < .59f)
             {
                 gameObject.transform.localEulerAngles += new Vector3(0, -90f, 0);
             }
-            else if (i > .99f)
+            else if (i > .90f)
             {
                 //  gameObject.transform.localEulerAngles += new Vector3(0, 0, 0);
                 Instantiate(pathmakerSpherePrefab, gameObject.transform.position, Quaternion.Euler(0, 0, 0));
@@ -61,25 +64,19 @@ public class Pathmaker : MonoBehaviour {
             //  Instantiate(floorPrefab, gameObject.transform.position, Quaternion.Euler(0,0,0));
             
             int randomIndex = Random.Range(0, tilePrefabs.Length);
-            Transform newClone = (Transform)Instantiate( tilePrefabs[randomIndex], gameObject.transform.position, Quaternion.Euler(0, 0, 0));
+            //too many floors, stop 
+           
+            
+                Transform newClone = (Transform)Instantiate(tilePrefabs[randomIndex], gameObject.transform.position, Quaternion.Euler(0, 0, 0));
 
-            gameObject.transform.Translate(3, 0, 0);
-            counter++;
-
+                gameObject.transform.Translate(3, 0, 0);
+              //  counter++;
+            
         } else
         {
             //Destroy(gameObject);
+            Debug.Log("stopped");
         }
-
-        // If too many floors stop time
-        if (floorCount > 6)
-        {
-            Time.timeScale = 0;
-        }
-
-        //    See how many Floors there are in the console
-        Debug.Log("Floor Count:" + floorCount);
-
 
      
         
